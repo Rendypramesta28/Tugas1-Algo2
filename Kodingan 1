@@ -1,0 +1,49 @@
+package tugasalgo;
+
+
+//Tugas 1 Algoritma
+//Ferdi Setyo Handika (227064516034)
+//Rendy Pramesta Syah (227064516024)
+
+
+
+import java.util.Scanner;
+public class TugasAlgo {
+
+    public static void main(String[] args) {
+          Scanner input = new Scanner(System.in);
+          
+          //Menginput Jumlah Mahasiswa
+          System.out.print("Masukan Jumlah Mahasiswa : ");
+          int jumlahMahasiswa = input.nextInt();
+          
+          //Array untuk menyimpan nama dan nilai mahasiswa
+          String[] namaMahasiswa = new String[jumlahMahasiswa];
+          double[] nilaiMahasiswa = new double[jumlahMahasiswa];
+          double totalNilaiMahasiswa = 0;
+          
+          //Meminta inputan nama dan nilai mahasiswa sebanyak jumlah mahasiswa
+          for (int i = 0; i < jumlahMahasiswa; i++){
+              System.out.print("Masukan nama mahasiswa urutan : " + (i+1) + ": ");
+              namaMahasiswa[i] = input.next();
+              System.out.print("Masukan nilai mahasiswa urutan : " + (i+1) + ": ");
+              nilaiMahasiswa[i] = input.nextDouble();
+              
+             
+              //Menambahkan nilai mahasiswa ke total nilai mahasiswa
+              totalNilaiMahasiswa += nilaiMahasiswa[i];
+           }
+          
+          //Menghitung rata rata nilai mahasiswa
+          double rataRataNilaiMahasiswa = totalNilaiMahasiswa / jumlahMahasiswa;
+          
+          //Menampilkan Hasil
+          System.out.println("\nData Mahasiswa : ");
+          for (int i = 0; i < jumlahMahasiswa; i++){
+              System.out.println("Mahasiswa urutan ke :" + (i+1) + "+ " + namaMahasiswa[i] + " Dengan Nilai " + nilaiMahasiswa[i]);
+          }
+          System.out.println("Total Nilai Mahasiswa : " + totalNilaiMahasiswa);
+          System.out.println("Rata Rata Nilai Mahasiswa : " + rataRataNilaiMahasiswa);
+    }
+    
+}
