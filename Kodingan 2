@@ -1,0 +1,49 @@
+//Ferdi Setyo Handika(227064516034)
+//Rendy Pramesta Syah(227064516024)
+package tesalgo;
+
+import java.util.Scanner;
+
+public class TesAlgo {
+
+
+ public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+
+    System.out.print("Masukkan jumlah mahasiswa: ");
+    int jumlahMahasiswa = input.nextInt();
+
+    
+    //Membuat Variabel 
+    int[] no = new int[jumlahMahasiswa];
+    String[] nama = new String[jumlahMahasiswa];
+    int[] uts = new int[jumlahMahasiswa];
+    int[] uas = new int[jumlahMahasiswa];
+
+    //Memanggil Variabel Untuk Menampilkan Output
+    System.out.println("Masukkan data mahasiswa: ");
+    for (int i = 0; i < jumlahMahasiswa; i++) {
+      System.out.print("No: ");
+      no[i] = input.nextInt();
+      input.nextLine(); // membersihkan input newline
+      System.out.print("Nama: ");
+      nama[i] = input.nextLine();
+      System.out.print("Nilai UTS: ");
+      uts[i] = input.nextInt();
+      System.out.print("Nilai UAS: ");
+      uas[i] = input.nextInt();
+    }
+
+    
+    //Menampilkan Output
+    System.out.println("No\tNama\tUTS\tUAS\tTotal\tRata-Rata");
+    System.out.println("================================================");
+
+    for (int i = 0; i < jumlahMahasiswa; i++) {
+      int total = uts[i] + uas[i];
+      double rata2 = total / 2.0;
+
+      System.out.printf("%d\t%s\t%d\t%d\t%d\t%.1f\n", no[i], nama[i], uts[i], uas[i], total, rata2);
+    }
+  }
+}
